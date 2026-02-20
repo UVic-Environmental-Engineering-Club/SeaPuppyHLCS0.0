@@ -1,4 +1,5 @@
-# Aggregated RPi sensor readings, published by hlcs_sensor_node
+# Aggregated RPi sensor readings used by the estimator, published by hlcs_sensor_node
+# Frame: define IMU axis convention here (body frame X forward, Y right, Z down)
 builtin_interfaces/Time stamp
 
 # IMU
@@ -16,4 +17,7 @@ float32 magnetometer_z
 float32 barometer           # hPa
 float32 temperature         # °C
 float32 depth               # m (from MS5837)
-bool    leak_detected
+bool leak_detected
+
+# GPS
+sensor_msgs/NavSatFix gps

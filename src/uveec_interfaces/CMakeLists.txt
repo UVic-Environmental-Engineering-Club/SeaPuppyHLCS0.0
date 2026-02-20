@@ -9,15 +9,17 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(builtin_interfaces REQUIRED)
+find_package(sensor_msgs REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/SensorReport.msg"
+  "msg/LlcsActuatorFeedback.msg"
   "msg/LlcsHealth.msg"
   "msg/ActuatorSetpoints.msg"
   "msg/Heartbeat.msg"
   "msg/StateEstimate.msg"
   "msg/MissionGoal.msg"
-  DEPENDENCIES builtin_interfaces
+  DEPENDENCIES builtin_interfaces sensor_msgs
 )
 
 if(BUILD_TESTING)
