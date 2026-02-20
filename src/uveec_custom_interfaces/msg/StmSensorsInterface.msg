@@ -1,5 +1,0 @@
-int32 gpslatitude
-int32 gpslongitude
-float32 micropumpencoder
-float32 pitchencoder
-float32 rollencoder
