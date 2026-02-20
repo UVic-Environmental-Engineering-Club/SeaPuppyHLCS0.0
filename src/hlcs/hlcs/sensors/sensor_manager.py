@@ -1,6 +1,6 @@
 import bluerobotics_navigator as navigator
 from .. import sensordepth
-from uveec_custom_interfaces.msg import RaspberrySensorsInterface
+from uveec_interfaces.msg import SensorReport
 
 
 class SensorManager:
@@ -15,20 +15,20 @@ class SensorManager:
       print("Depth sensor not initialized")
       # exit(1)
 
-  def getSensorReadingsMsg(self) -> RaspberrySensorsInterface:
+  def getSensorReadingsMsg(self) -> SensorReport:
      # TODO: Add actual sensor reading instead of static values
-    msg = RaspberrySensorsInterface()
-    msg.barometer=1013.25
-    msg.gyroscopex=0.1
-    msg.gyroscopey=-0.2
-    msg.gyroscopez=0.05
-    msg.leakdetection=False
-    msg.temperature=21.5
-    msg.accelerometerx=0.01
-    msg.accelerometery=0.98
-    msg.accelerometerz=-0.05
-    msg.magnetometerx=0.3
-    msg.magnetometery=-0.1
-    msg.magnetometerz=0.5
-    msg.depthsensor=self.depthsensor.depth()
+    msg = SensorReport()
+    msg.barometer = 1013.25
+    msg.gyroscope_x = 0.1
+    msg.gyroscope_y = -0.2
+    msg.gyroscope_z = 0.05
+    msg.leak_detected = False
+    msg.temperature = 21.5
+    msg.accelerometer_x = 0.01
+    msg.accelerometer_y = 0.98
+    msg.accelerometer_z = -0.05
+    msg.magnetometer_x = 0.3
+    msg.magnetometer_y = -0.1
+    msg.magnetometer_z = 0.5
+    msg.depth = self.depthsensor.depth()
     return msg
